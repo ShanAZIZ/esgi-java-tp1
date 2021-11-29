@@ -7,23 +7,34 @@ import org.junit.jupiter.api.Assertions;
 public class TrainTest {
 
     @Test
-    public void should_create_train_and_retrieve_seats() throws Exception {
-        Train train = new Train(3, 100);
-        int count = 0;
-        for (Car car : train.getCars()) {
-            for (Seat seat : car.getSeats()) {
-                count += 1;
+    public void should_create_train_and_retrieve_seats() {
+        try {
+            Train train = new Train(3, 100);
+            int count = 0;
+            for (Car car : train.getCars()) {
+                for (Seat seat : car.getSeats()) {
+                    count += 1;
+                }
             }
+            Assertions.assertEquals(100, train.getCruzeSpeed());
+            Assertions.assertEquals(30, count);
+            Assertions.assertEquals(30, train.getEmptySeats());
+        } catch (IllegalArgumentException e){
+            e.printStackTrace();
         }
-        Assertions.assertEquals(train.getCruzeSpeed(), 100);
-        Assertions.assertEquals(count, 30);
     }
 
     @Test
-    public void shoud_book_seat() throws Exception {
-        Train train = new Train(3, 100);
-        train.book();
-        Assertions.assertFalse(train.getCars().get(0).getSeats().get(0).isStatut());
+    public void shoud_book_seat() throws IllegalArgumentException {
+        try {
+            Train train = new Train(3, 100);
+            train.book();
+            Assertions.assertFalse(train.getCars().get(0).getSeats().get(0).isEmpty());
+            Assertions.assertEquals(29, train.getEmptySeats());
+        } catch (IllegalArgumentException e){
+            e.printStackTrace();
+        }
+
     }
 
     @Test
@@ -35,7 +46,6 @@ public class TrainTest {
         }
         catch (IllegalArgumentException exception){
             exception.printStackTrace();
-            Assertions.assertTrue(true);
         }
     }
 
