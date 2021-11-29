@@ -38,10 +38,11 @@ public class TrainTest {
     }
 
     @Test
-    public void shoud_exection_two_identitical_gare_in_route(){
-        Gare gare = new Gare(1L, 10, 10);
+    public void shoud_throw_exection_when_two_identitical_gare_in_route(){
+        Gare gare = new Gare(1L, (new Position(10, 10)));
+        Gare gare2 = new Gare(1L, (new Position(10, 10)));
         try {
-            Route route = new Route(gare, gare, 100);
+            Route route = new Route(gare, gare2, 100);
             Assertions.fail();
         }
         catch (IllegalArgumentException exception){
