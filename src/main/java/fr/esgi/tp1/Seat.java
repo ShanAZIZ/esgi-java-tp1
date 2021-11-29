@@ -2,16 +2,16 @@ package fr.esgi.tp1;
 
 public class Seat {
     private Reference id;
-    private boolean statut;
+    private boolean isEmpty;
 
     public Seat(Reference id, boolean statut ){
         this.id = id;
-        this.statut = statut;
+        this.isEmpty = statut;
     }
 
     public Seat(Reference id){
         this.id = id;
-        this.statut = true;
+        this.isEmpty = true;
     }
 
     public Seat(){
@@ -26,12 +26,12 @@ public class Seat {
         this.id = id;
     }
 
-    public boolean isStatut() {
-        return statut;
+    public boolean isEmpty() {
+        return isEmpty;
     }
 
-    public void setStatut(boolean statut) {
-        this.statut = statut;
+    public void setIsEmpty(boolean isEmpty) {
+        this.isEmpty = isEmpty;
     }
 
 }
