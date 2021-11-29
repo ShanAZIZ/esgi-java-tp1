@@ -48,6 +48,8 @@ public class Route {
             float distanceY = y2 - y1;
         }
 
+        return 0;
+
     }
 
     public void setDistance(int distance) {
