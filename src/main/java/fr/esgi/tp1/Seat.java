@@ -33,4 +33,5 @@ public class Seat {
     public void setStatut(boolean statut) {
         this.statut = statut;
     }
+
 }

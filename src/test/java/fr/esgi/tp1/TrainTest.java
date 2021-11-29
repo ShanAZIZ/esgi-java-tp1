@@ -19,5 +19,25 @@ public class TrainTest {
         Assertions.assertEquals(count, 30);
     }
 
+    @Test
+    public void shoud_book_seat() throws Exception {
+        Train train = new Train(3, 100);
+        train.book();
+        Assertions.assertFalse(train.getCars().get(0).getSeats().get(0).isStatut());
+    }
+
+    @Test
+    public void shoud_exection_two_identitical_gare_in_route(){
+        Gare gare = new Gare(1L, 10, 10);
+        try {
+            Route route = new Route(gare, gare, 100);
+            Assertions.fail();
+        }
+        catch (IllegalArgumentException exception){
+            exception.printStackTrace();
+            Assertions.assertTrue(true);
+        }
+    }
+
 
 }

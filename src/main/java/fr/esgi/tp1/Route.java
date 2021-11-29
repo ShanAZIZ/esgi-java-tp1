@@ -6,6 +6,9 @@ public class Route {
     private int distance;
 
     public Route(Gare departure, Gare arrival, int distance){
+        if(departure.equals(arrival)){
+            throw new IllegalArgumentException("Deux gares identitiques");
+        }
         this.Departure = departure;
         this.Arrival = arrival;
     }
