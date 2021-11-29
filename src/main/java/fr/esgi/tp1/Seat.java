@@ -1,15 +1,15 @@
 package fr.esgi.tp1;
 
 public class Seat {
-    private int id;
+    private Reference id;
     private boolean statut;
 
-    public Seat(int id, boolean statut ){
+    public Seat(Reference id, boolean statut ){
         this.id = id;
         this.statut = statut;
     }
 
-    public Seat(int id){
+    public Seat(Reference id){
         this.id = id;
         this.statut = true;
     }
@@ -18,11 +18,11 @@ public class Seat {
 
     }
 
-    public int getId() {
+    public Reference getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Reference id) {
         this.id = id;
     }
 

@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Car {
-    private int id;
+    private Reference id;
     private List<Seat> seats;
 
-    public Car(int id, List<Seat> seats) {
+    public Car(Reference id, List<Seat> seats) {
         this.id = id;
         this.seats = seats;
     }
 
-    public Car(int id){
+    public Car(Reference id){
         this.id = id;
         this.seats = new ArrayList<>();
         for(int i = 0; i < 10; i++){
@@ -21,11 +21,11 @@ public class Car {
         }
     }
 
-    public int getId() {
+    public Reference getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Reference id) {
         this.id = id;
     }
 
