@@ -7,12 +7,13 @@ public class Trip {
     private Train train;
     private LocalDateTime time;
     private Route route;
-    private Duration duration;
+    private float duration;
 
     public Trip(Train train, LocalDateTime time, Route route) {
         this.train = train;
         this.time = time;
         this.route = route;
+        this.duration = (float) this.route.getDistance() / (float) this.train.getCruzeSpeed();
     }
 
     public Train getTrain() {
@@ -39,11 +40,11 @@ public class Trip {
         this.route = route;
     }
 
-    public Duration getDuration() {
+    public float getDuration() {
         return duration;
     }
 
-    public void setDuration(Duration duration) {
+    public void setDuration(float duration) {
         this.duration = duration;
     }
 }

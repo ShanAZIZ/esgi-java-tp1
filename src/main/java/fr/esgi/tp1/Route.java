@@ -5,15 +5,14 @@ public class Route {
     private Gare Arrival;
     private int distance;
 
-    public Route(Gare departure, Gare arrival, int distance){
+    public Route(Gare departure, Gare arrival){
         if(departure.equals(arrival)){
             throw new IllegalArgumentException("Deux gares identitiques");
         }
         this.Departure = departure;
         this.Arrival = arrival;
+        this.distance = Position.getDistance();
     }
-
-
 
     public Gare getDeparture() {
         return Departure;
@@ -31,29 +30,9 @@ public class Route {
         Arrival = arrival;
     }
 
-//    public int getDistance(Gare Depart, Gare Arrive) {
-//        float x1 = Depart.getX();
-//        float y1 = Depart.getY();
-//
-//        float x2 = Arrive.getX();
-//        float y2 = Arrive.getY();
-//
-//        if(x1 > x2){
-//            float distanceX = x1 - x2;
-//        }
-//        else{
-//            float distanceX = x2 - x1;
-//        }
-//        if(y1 > y2){
-//            float distanceY = y1 - y2;
-//        }
-//        else{
-//            float distanceY = y2 - y1;
-//        }
-//
-//        return 0;
-//
-//    }
+    public int getDistance() {
+        return distance;
+    }
 
     public void setDistance(int distance) {
         this.distance = distance;

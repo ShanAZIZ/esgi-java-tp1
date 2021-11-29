@@ -12,6 +12,10 @@ public class Position {
         this.y = y;
     }
 
+    public static int getDistance(){
+        return 500;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
